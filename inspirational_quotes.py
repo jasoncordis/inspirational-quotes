@@ -43,15 +43,3 @@ def get_bot_response():
 
 if __name__ == "__main__":
     app.run()
-
-
-
-while True:
-    message=input('You:')
-    if message.strip() !='Bye':
-
-        reply=bot.get_response(message)
-        print('Chatbot :',reply)
-    if message.strip()=='Bye':
-        print('Chatbot : Bye')
-        break
