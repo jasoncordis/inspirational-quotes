@@ -6,7 +6,7 @@ future==0.17.1
 gunicorn==19.9.0
 idna==2.8
 mathparse==0.1.2
-nltk==3.4
+nltk==3.4.5
 numpy==1.15.4
 oauthlib==2.1.0
 pandas==0.23.4
