@@ -15,7 +15,7 @@ python-dateutil==2.6.1
 python-twitter==3.5
 Flask==0.10.1
 pytz==2018.7
-PyYAML==3.13
+PyYAML==5.4
 requests==2.21.0
 requests-oauthlib==1.0.0
 singledispatch==3.4.0.3
