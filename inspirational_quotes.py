@@ -35,7 +35,7 @@ def get_bot_response():
     elif (userText == "bye" or userText == "Bye"):
         sentence = "Bye..See you again"
     elif userText  not in question:
-        sentence=userText +' quotes is not available'
+        sentence='Better call Saul!'
     else:
          data= str(bot.get_response(userText))
          sentence = data.replace(", ", ".\n")
