@@ -12,7 +12,7 @@ bot.set_trainer(ListTrainer)
 bot.train(["Who are you?",
            "Saul Goodman is… He’s the last line of defense for the little guy. Are you getting sold down the river? He’s a life raft. You getting stepped on, he’s a sharp stick. You got Goliath on your back, Saul’s the guy with the slingshot. He’s a righter of wrongs. He’s friend to the friendless. That’s Saul Goodman."])
 bot.train(["Tell me a joke.", "You know why God made snakes before he made lawyers? He needed the practice."])
-bot.train(["How was the bar exam?", "The bar exam’s a mother. I mean, for me it was. I failed it the first two times, but I guess it’s like losing your virginity, third time’s the charm."[)
+bot.train(["How was the bar exam?", "The bar exam’s a mother. I mean, for me it was. I failed it the first two times, but I guess it’s like losing your virginity, third time’s the charm."])
 
 @app.route("/")
 def home():
