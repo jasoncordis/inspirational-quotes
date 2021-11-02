@@ -21,8 +21,7 @@ def get_bot_response():
     userText = request.args.get('msg')
     userText=userText.lower()
     data= str(bot.get_response(userText))
-    sentence = data.replace(", ", ".\n")
-    return sentence
+    return data
 
 if __name__ == "__main__":
     app.run()
