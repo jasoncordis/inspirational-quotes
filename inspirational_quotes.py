@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 bot=ChatBot('Inspiration Quotes')
 bot.set_trainer(ListTrainer)
-bot.train(["Tell me a joke.", "You know why God made snakes before he made lawyers? He needed the practice."])
 
 @app.route("/")
 def home():
