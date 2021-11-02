@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 bot=ChatBot('Inspiration Quotes', 
             storage_adapter='chatterbot.storage.SQLStorageAdapter',
-            database_uri='sqlite:///database1.sqlite3')
+            database_uri='sqlite:///database400.sqlite3')
 bot.set_trainer(ListTrainer)
 bot.train(["saul", "goodman"])
 
