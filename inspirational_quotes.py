@@ -31,7 +31,7 @@ def get_bot_response():
     userText=userText.lower()
     if (userText=="hello" or userText=="Hello"):
         str_question=','.join(question)
-        sentence = "Hello,Please type your quotes name listed " + str_question.upper()
+        sentence = "S'all good, man."
     elif (userText == "bye" or userText == "Bye"):
         sentence = "Bye..See you again"
     elif userText  not in question:
