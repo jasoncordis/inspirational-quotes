@@ -28,7 +28,6 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    userText=userText.lower()
     data= str(bot.get_response(userText))
     return data
 
