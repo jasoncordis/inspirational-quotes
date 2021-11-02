@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 bot=ChatBot('Inspiration Quotes', 
             storage_adapter='chatterbot.storage.SQLStorageAdapter',
-            database_uri='sqlite:///database1.sqlite3')
+            database_uri='sqlite:///database2.sqlite3')
 bot.set_trainer(ListTrainer)
 bot.train(["Tell me a joke.", "You know why God made snakes before he made lawyers? He needed the practice."])
 
