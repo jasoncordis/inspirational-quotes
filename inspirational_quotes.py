@@ -6,11 +6,20 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 bot=ChatBot('Inspiration Quotes')
-trainer = ListTrainer(bot)
-
-trainer.train([
-    "Hello"
-])
+bot.set_trainer(ListTrainer)
+df=pd.read_csv('quotes_data.csv',encoding ='latin1')
+new = df["hrefs"].str.split("src=t_", n = 1, expand = True)
+df['quotes_type']=new[1]
+author = df["lines"].str.split(".-", n = 1, expand = True)
+df["quotes_lines"]=author[0]
+dataset=df.drop(['lines', 'hrefs'], axis=1)
+df_new = dataset.groupby('quotes_type').agg({'quotes_lines': ', '.join}).reset_index()
+final_df=df_new[['quotes_type','quotes_lines']]
+question=list(final_df['quotes_type'])
+for index, row in final_df.iterrows():
+    ques=row['quotes_type']
+    ans=row['quotes_lines']
+    bot.train([ques, ans])
 
 @app.route("/")
 def home():
