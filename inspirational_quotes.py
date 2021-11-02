@@ -7,9 +7,21 @@ app = Flask(__name__)
 
 bot=ChatBot('Inspiration Quotes', 
             storage_adapter='chatterbot.storage.SQLStorageAdapter',
-            database_uri='sqlite:///database2.sqlite3')
+            database_uri='sqlite:///database1.sqlite3')
 bot.set_trainer(ListTrainer)
-bot.train(["Tell me a joke.", "You know why God made snakes before he made lawyers? He needed the practice."])
+df=pd.read_csv('quotes_data.csv',encoding ='latin1')
+new = df["hrefs"].str.split("src=t_", n = 1, expand = True)
+df['quotes_type']=new[1]
+author = df["lines"].str.split(".-", n = 1, expand = True)
+df["quotes_lines"]=author[0]
+dataset=df.drop(['lines', 'hrefs'], axis=1)
+df_new = dataset.groupby('quotes_type').agg({'quotes_lines': ', '.join}).reset_index()
+final_df=df_new[['quotes_type','quotes_lines']]
+question=list(final_df['quotes_type'])
+for index, row in final_df.iterrows():
+    ques=row['quotes_type']
+    ans=row['quotes_lines']
+    bot.train(["saul", "goodman"])
 
 @app.route("/")
 def home():
