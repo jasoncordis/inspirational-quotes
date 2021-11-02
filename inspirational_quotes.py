@@ -6,7 +6,6 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 bot=ChatBot('Inspiration Quotes')
-bot.storage.drop()
 bot.set_trainer(ListTrainer)
 df=pd.read_csv('quotes_data.csv',encoding ='latin1')
 new = df["hrefs"].str.split("src=t_", n = 1, expand = True)
