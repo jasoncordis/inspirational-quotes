@@ -5,7 +5,9 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-bot=ChatBot('Inspiration Quotes')
+bot=ChatBot('Inspiration Quotes', 
+            storage_adapter='chatterbot.storage.SQLStorageAdapter',
+            database_uri='sqlite:///database1.sqlite3')
 bot.set_trainer(ListTrainer)
 df=pd.read_csv('quotes_data.csv',encoding ='latin1')
 new = df["hrefs"].str.split("src=t_", n = 1, expand = True)
@@ -19,7 +21,7 @@ question=list(final_df['quotes_type'])
 for index, row in final_df.iterrows():
     ques=row['quotes_type']
     ans=row['quotes_lines']
-    bot.train([ques, ans])
+    bot.train(["saul", "goodman"])
 
 @app.route("/")
 def home():
