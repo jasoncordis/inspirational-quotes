@@ -1,1 +1,1 @@
-web: gunicorn inspirational_quotes:app
+web: gunicorn app:app
