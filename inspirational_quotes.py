@@ -6,11 +6,12 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-bot=ChatBot('Inspiration Quotes',     storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
+bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
     logic_adapters=[
         'chatterbot.logic.BestMatch'
     ],
     database_uri='mongodb+srv://user:csc675@cluster0.7udau.mongodb.net/libraryapp?retryWrites=true&w=majority')
+    bot.train(["Saul", "Goodman"])
 
 @app.route("/")
 def home():
