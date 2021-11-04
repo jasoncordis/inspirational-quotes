@@ -14,7 +14,7 @@ bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabas
 bot.set_trainer(ListTrainer)
 bot.train(["What is your opinion on this issue?", "The path to justice is rarely smooth."])
 bot.train(["Do you play music?", "Oh, I tried to learn guitar in high school, but then I decided there were easier ways to get girls."])
-bot.train(["I got in trouble. I had a bad day.", "You act like you’re the first guy this ever happened to. I caught my second wife screwing my stepdad, okay? It’s a cruel world, grow up.])
+bot.train(["I got in trouble. I had a bad day.", "You act like you’re the first guy this ever happened to. I caught my second wife screwing my stepdad, okay? It’s a cruel world, grow up."])
 bot.train(["Goodbye", "So if you wanna make more money and, uh, keep the money that you make... better call Saul!"])
 bot.train(["You owe me money.", "It wasn't me, it was Ignacio! He's the one!"])
 bot.train(["What is your opnion?", "I'm not saying it's not bad. It's bad. But it could be worse."])
