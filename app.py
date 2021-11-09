@@ -9,9 +9,10 @@ app = Flask(__name__)
 bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
     logic_adapters=[
         'chatterbot.logic.BestMatch'
-         tie_breaking_method="random_response"
     ],
-    database_uri='mongodb+srv://user:csc675@cluster0.7udau.mongodb.net/libraryapp?retryWrites=true&w=majority')
+    database_uri='mongodb+srv://user:csc675@cluster0.7udau.mongodb.net/libraryapp?retryWrites=true&w=majority',
+    tie_breaking_method="random_response")
+
 bot.set_trainer(ListTrainer)
 
 @app.route("/")
