@@ -11,7 +11,8 @@ bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabas
         'chatterbot.logic.BestMatch'
     ],
     database_uri='mongodb+srv://user:csc675@cluster0.7udau.mongodb.net/libraryapp?retryWrites=true&w=majority',
-    tie_breaking_method="random_response")
+    chatterbot.adapters.logic.mixins.TieBreaking.get_random_response
+    )
 
 bot.set_trainer(ListTrainer)
 bot.train(["Tell me a joke.", "How many lawyers does it take to change a light bulb? Three... one to climb the ladder, one to shake it, and one to sue the ladder company."])
