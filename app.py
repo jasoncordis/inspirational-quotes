@@ -16,7 +16,7 @@ bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabas
     )
 
 bot.set_trainer(ListTrainer)
-bot.train(["Tell me a joke.", "What's the difference between a vacuum cleaner and a lawyer on a motorcycle? The vacuum cleaner has the dirt bag on the inside."])
+bot.train(["Can you describe your dad?", "Everybody liked my dad because he was a soft touch. Every deadbeat in the neighborhood owed him money. You come in here with a sob story and you leave with a pat on the back and a gallon of milk. He could have made it work, he could have sold beer and cigarettes to the kids from Mary Margaret's, but no. Not him. He was never gonna do what he had to do."])
 
 bot.set_trainer(ListTrainer)
 
