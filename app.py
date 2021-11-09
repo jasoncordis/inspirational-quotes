@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
-    response_selection_method=get_random_response
+    response_selection_method=get_random_response,
     logic_adapters=[
         'chatterbot.logic.BestMatch'
     ],
