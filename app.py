@@ -16,10 +16,7 @@ bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabas
     )
 
 bot.set_trainer(ListTrainer)
-bot.train(["Hi", "Hi. I'm Saul Goodman. Did you know that you have rights? The Constitution says you do. And so do I. I believe that until proven guilty, every man, woman, and child in this country is innocent. And that's why I fight for you, Albuquerque!"])
-bot.train(["Hey", "Hi. I'm Saul Goodman. Did you know that you have rights? The Constitution says you do. And so do I. I believe that until proven guilty, every man, woman, and child in this country is innocent. And that's why I fight for you, Albuquerque!"])
-bot.train(["yo", "Hi. I'm Saul Goodman. Did you know that you have rights? The Constitution says you do. And so do I. I believe that until proven guilty, every man, woman, and child in this country is innocent. And that's why I fight for you, Albuquerque!"])
-
+bot.train(["Tell me a joke.", "What's the difference between a vacuum cleaner and a lawyer on a motorcycle? The vacuum cleaner has the dirt bag on the inside."])
 
 bot.set_trainer(ListTrainer)
 
