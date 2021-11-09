@@ -1,17 +1,18 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from chatterbot.storage import StorageAdapter
+from chatterbot.response_selection import get_random_response
 import pandas as pd
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 bot=ChatBot('Saul Goodman',     storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
+    response_selection_method=get_random_response
     logic_adapters=[
         'chatterbot.logic.BestMatch'
     ],
     database_uri='mongodb+srv://user:csc675@cluster0.7udau.mongodb.net/libraryapp?retryWrites=true&w=majority',
-    chatterbot.adapters.logic.mixins.TieBreaking.get_random_response
     )
 
 bot.set_trainer(ListTrainer)
